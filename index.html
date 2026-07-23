@@ -113,19 +113,17 @@ background:radial-gradient(circle,#5a0b16 0%, #090909 70%);
 <script>
 function showBirthday(){
 
-document.getElementById("intro").style.display="none";
+  document.getElementById("intro").style.display="none";
 
-document.getElementById("birthday").style.display="flex";
-function showBirthday(){
-  document.getElementById("intro").style.display = "none";
-  document.getElementById("birthday").style.display = "flex";
+  document.getElementById("birthday").style.display="flex";
 
   confetti({
-    particleCount: 150,
-    spread: 90,
-    startVelocity: 45,
-    origin: { y: 0.6 }
+    particleCount:150,
+    spread:90,
+    startVelocity:45,
+    origin:{ y:0.6 }
   });
+
 }
 </script>
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
