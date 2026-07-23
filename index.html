@@ -82,16 +82,32 @@
 
 <body>
 
-<div id="intro">
+<div id="intro" class="screen">
   <h1>hey haiqa.</h1>
 
   <p>we made something for u.</p>
 
   <button onclick="showBirthday()">CLICK HERE</button>
 </div>
+  <div id="birthday" class="screen" style="display:none;">
+
+<h1>HAPPY 14TH</h1>
+
+<h1>BIRTHDAY</h1>
+
+<h1>HAIQA!!!!</h1>
+
+<p>this is only the beginning...</p>
+
+</div>
 <script>
 function showBirthday(){
-    alert("HAPPY 14TH BIRTHDAY HAIQA!!!");
+
+document.getElementById("intro").style.display="none";
+
+document.getElementById("birthday").style.display="flex";
+
+}
 }
 </script>
 </body>
