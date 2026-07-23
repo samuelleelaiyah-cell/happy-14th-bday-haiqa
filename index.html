@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -9,146 +11,129 @@
 <style>
 
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Georgia, serif;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Georgia, serif;
 }
 
+
 body{
-background:#090909;
-color:white;
-overflow:hidden;
+
+    background:#090909;
+    color:white;
+    overflow:hidden;
+
 }
 
 
 .screen{
-height:100vh;
-width:100%;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
 
-background:
-radial-gradient(circle at center,#5a0b16 0%,#090909 75%);
+    height:100vh;
+    width:100%;
 
-padding:30px;
-}
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
 
+    text-align:center;
 
-h1{
-font-size:50px;
-color:#d4af37;
+    padding:25px;
 
-text-shadow:
-0 0 10px gold,
-0 0 25px rgba(212,175,55,.6);
-
-margin-bottom:20px;
-
-}
-
-
-p{
-font-size:20px;
-color:#eee;
-max-width:700px;
-line-height:1.6;
-
-}
-
-
-button{
-
-margin-top:35px;
-
-padding:18px 45px;
-
-font-size:18px;
-
-border:none;
-border-radius:50px;
-
-background:#d4af37;
-color:black;
-
-font-weight:bold;
-
-cursor:pointer;
-
-box-shadow:0 0 20px gold;
-
-transition:.3s;
-
-}
-
-
-button:hover{
-
-transform:scale(1.08);
+    background:
+    radial-gradient(circle,#5a0b16 0%,#090909 75%);
 
 }
 
 
 
 .hidden{
-display:none;
-}
 
-
-
-/* INTRO */
-
-#intro h1{
-
-animation:fadeUp 1.5s;
-
-}
-
-
-#intro p{
-
-animation:fadeUp 2s;
-
-}
-
-
-#intro button{
-
-animation:fadeUp 2.5s;
+    display:none !important;
 
 }
 
 
 
-/* BIRTHDAY */
+h1{
 
-#birthday h1{
+    color:#d4af37;
 
-animation:pop 1.5s;
+    font-size:48px;
 
-}
+    text-shadow:
+    0 0 10px gold,
+    0 0 25px gold;
 
-
-
-/* WARNING */
-
-.warning{
-
-font-size:45px;
+    margin-bottom:20px;
 
 }
 
 
 
+p{
 
-@keyframes fadeUp{
+    font-size:18px;
+
+    line-height:1.6;
+
+    color:#eee;
+
+    max-width:750px;
+
+}
+
+
+
+button{
+
+    margin-top:35px;
+
+    padding:16px 40px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:#d4af37;
+
+    color:black;
+
+    font-weight:bold;
+
+    font-size:18px;
+
+    cursor:pointer;
+
+    box-shadow:0 0 20px gold;
+
+}
+
+
+
+button:hover{
+
+    transform:scale(1.08);
+
+}
+
+
+
+.fade{
+
+    animation:fade 1.5s;
+
+}
+
+
+
+@keyframes fade{
 
 from{
 
 opacity:0;
+
 transform:translateY(30px);
 
 }
@@ -156,6 +141,7 @@ transform:translateY(30px);
 to{
 
 opacity:1;
+
 transform:translateY(0);
 
 }
@@ -164,24 +150,130 @@ transform:translateY(0);
 
 
 
-@keyframes pop{
+/* INTRO */
+
+#intro h1,
+#intro p,
+#intro button{
+
+    animation:fade 1.5s;
+
+}
+
+
+
+
+/* SCRAPBOOK */
+
+.photo-book{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+    gap:20px;
+
+    max-height:60vh;
+
+    overflow-y:auto;
+
+    padding:20px;
+
+}
+
+
+
+.photo-card{
+
+    background:#111;
+
+    padding:15px;
+
+    border:2px solid #d4af37;
+
+    border-radius:20px;
+
+    box-shadow:0 0 20px rgba(212,175,55,.5);
+
+    transform:rotate(-3deg);
+
+}
+
+
+
+.photo-card:nth-child(even){
+
+    transform:rotate(3deg);
+
+}
+
+
+
+.photo-card img{
+
+    width:220px;
+
+    height:220px;
+
+    object-fit:cover;
+
+    border-radius:15px;
+
+}
+
+
+
+.letter{
+
+    max-height:65vh;
+
+    overflow-y:auto;
+
+    padding:20px;
+
+    font-size:16px;
+
+}
+
+
+
+/* HEARTS */
+
+.hearts{
+
+    position:fixed;
+
+    bottom:20px;
+
+    width:100%;
+
+    text-align:center;
+
+    font-size:30px;
+
+    animation:float 4s infinite;
+
+}
+
+
+
+@keyframes float{
 
 0%{
+transform:translateY(0);
+}
 
-transform:scale(.5);
-opacity:0;
-
+50%{
+transform:translateY(-25px);
 }
 
 100%{
-
-transform:scale(1);
-opacity:1;
-
+transform:translateY(0);
 }
 
 }
-
 
 
 </style>
@@ -192,10 +284,18 @@ opacity:1;
 <body>
 
 
+<div class="hearts">
+❤️ ✨ ❤️ ✨ ❤️
+</div>
+
+
 <div id="intro" class="screen">
 
 
-<h1>hey haiqa. ❤️</h1>
+<h1>
+hey haiqa. ❤️
+</h1>
+
 
 <p>
 we made something special for you.
@@ -208,8 +308,6 @@ CLICK HERE
 
 
 </div>
-
-
 
 
 
@@ -240,12 +338,10 @@ this is only the beginning...
 
 
 
-
-
 <div id="warning" class="screen hidden">
 
 
-<h1 class="warning">
+<h1>
 ⚠️ WARNING
 </h1>
 
@@ -261,9 +357,11 @@ I ACCEPT THE RISK ❤️
 
 
 </div>
-<!-- LETTER SECTION -->
+
+  <!-- LETTER -->
 
 <div id="letter" class="screen hidden">
+
 
 <h1>
 💌 A LETTER FOR HAIQA
@@ -273,43 +371,62 @@ I ACCEPT THE RISK ❤️
 <p class="letter">
 
 HAPPY BIRTHDAY HAIQAAAAAA!!!! 🎉
+
 <br><br>
 
 WE STILL CAN’T BELIEVE UR 14 NOW WHATTTTT 😭
 WE HOPE U HAVE THE BEST DAY EVER AND THAT U GET EVERYTHING
-YOU’VE BEEN WISHING FOR BECAUSE YOU ACTUALLY DESERVE IT.
+YOU’VE BEEN WISHING FOR BC U ACTUALLY DESERVE IT.
+
 <br><br>
 
-THANK YOU FOR ALWAYS BEING SUCH A FUN PERSON TO BE AROUND.
-YOU’RE THE TYPE OF PERSON WHO CAN MAKE PEOPLE LAUGH WITHOUT
-EVEN TRYING, AND YOU NEVER FAIL TO MAKE THINGS MORE FUN.
+THANK U FOR ALWAYS BEING SUCH A FUN PERSON TO BE AROUND.
+UR THE TYPE OF PERSON WHO CAN MAKE PEOPLE LAUGH WITHOUT
+EVEN TRYING, AND U NEVER FAIL TO MAKE THINGS MORE FUN.
+
 <br><br>
 
-WE’LL NEVER FORGET THE
+WE’LL NEVER FORGET THE:
+
+<br><br>
+
 “GUESS WHAT?”
+<br>
 “WHAT?”
+<br>
 “CHICKEN BUTT.”
-THING BECAUSE FOR SOME REASON IT WAS ALWAYS SO STUPID
-BUT SO FUNNY 😭
+
 <br><br>
 
-WE’RE PRAYING THAT THIS YEAR BRINGS YOU NOTHING BUT
+THING BC FOR SOME REASON IT WAS ALWAYS SO STUPID
+BUT SO FUNNY 😭
+
+<br><br>
+
+WE’RE PRAYING THAT THIS YEAR BRINGS U NOTHING BUT
 HAPPINESS, JOY, SUCCESS, AND SO MANY BLESSINGS.
-MAY ALLAH CONTINUE TO GUIDE YOU IN EVERYTHING YOU DO,
-GIVE YOU STRENGTH THROUGH HARD DAYS,
-AND HELP YOU ACHIEVE EVERY GOAL AND DREAM YOU HAVE.
+
+<br><br>
+
+MAY ALLAH CONTINUE TO GUIDE U IN EVERYTHING U DO,
+GIVE U THE STRENGTH TO GET THROUGH THE HARD DAYS,
+AND HELP U ACHIEVE EVERY GOAL AND DREAM U HAVE.
+
 <br><br>
 
 STAY THE SAME HAIQA WE ALL KNOW AND LOVE.
-DON’T EVER LOSE THE PERSON YOU ARE.
+DON’T EVER LOSE THE PERSON U ARE.
+
 <br><br>
 
 HAPPY BIRTHDAY AGAIN!!
-ENJOY YOUR DAY, EAT A LOT, HAVE FUN,
+ENJOY UR DAY, EAT A LOT, HAVE FUN,
 AND MAKE THE MOST OF IT.
+
 <br><br>
 
-WE LOVE YOU ALWAYS.
+WE LOVE U ALWAYS.
+
 <br><br>
 
 LOVE,
@@ -330,8 +447,7 @@ SEE YOUR MEMORIES 📸
 
 
 
-<!-- PHOTO SCRAPBOOK -->
-
+<!-- SCRAPBOOK -->
 
 <div id="photos" class="screen hidden">
 
@@ -339,7 +455,6 @@ SEE YOUR MEMORIES 📸
 <h1>
 📖 HAIQA'S SCRAPBOOK
 </h1>
-
 
 
 <div class="photo-book">
@@ -357,17 +472,15 @@ The birthday girl ❤️
 
 
 
-
 <div class="photo-card">
 
 <img src="images/IMG_7859.jpeg">
 
 <p>
-A little moment ✨
+A little memory ✨
 </p>
 
 </div>
-
 
 
 
@@ -376,11 +489,10 @@ A little moment ✨
 <img src="images/IMG_8208.jpeg">
 
 <p>
-Another beautiful memory 🌙
+Haiconic moment 🌙
 </p>
 
 </div>
-
 
 
 
@@ -389,11 +501,10 @@ Another beautiful memory 🌙
 <img src="images/IMG_8341.jpeg">
 
 <p>
-Forever iconic ✨
+Never stop smiling ❤️
 </p>
 
 </div>
-
 
 
 
@@ -402,7 +513,7 @@ Forever iconic ✨
 <img src="images/IMG_8423.jpeg">
 
 <p>
-Stay amazing ❤️
+Stay amazing ✨
 </p>
 
 </div>
@@ -423,14 +534,13 @@ NEXT 😂
 
 
 
-<!-- FUNNY SECTION -->
-
+<!-- FUNNY -->
 
 <div id="funny" class="screen hidden">
 
 
 <h1>
-😂 CERTIFIED HAIQA MOMENTS
+😂 HAIQA MOMENTS
 </h1>
 
 
@@ -442,10 +552,11 @@ NEXT 😂
 <img src="images/funnyscreenshot.jpeg">
 
 <p>
-Never beating the funny allegations 😭
+The funniest memories 😭
 </p>
 
 </div>
+
 
 
 <div class="photo-card">
@@ -465,7 +576,7 @@ Guess what?
 <img src="images/chicken2.jpeg">
 
 <p>
-Chicken butt. 💀
+CHICKEN BUTT 💀
 </p>
 
 </div>
@@ -481,302 +592,240 @@ ONE LAST THING ❤️
 
 
 </div>
-<!-- FINAL SCREEN -->
 
-<div id="final" class="screen hidden">
+  <!-- LETTER -->
+
+<div id="letter" class="screen hidden">
+
 
 <h1>
-❤️ HAPPY BIRTHDAY HAIQA ❤️
+💌 A LETTER FOR HAIQA
 </h1>
 
 
-<p>
+<p class="letter">
 
-Haiconic forever ✨
-<br><br>
-
-Keep being the funny, kind, and amazing person everyone loves.
+HAPPY BIRTHDAY HAIQAAAAAA!!!! 🎉
 
 <br><br>
 
-We hope this year gives you happiness,
-success, and endless blessings.
+WE STILL CAN’T BELIEVE UR 14 NOW WHATTTTT 😭
+WE HOPE U HAVE THE BEST DAY EVER AND THAT U GET EVERYTHING
+YOU’VE BEEN WISHING FOR BC U ACTUALLY DESERVE IT.
 
 <br><br>
 
-Never forget how special you are.
+THANK U FOR ALWAYS BEING SUCH A FUN PERSON TO BE AROUND.
+UR THE TYPE OF PERSON WHO CAN MAKE PEOPLE LAUGH WITHOUT
+EVEN TRYING, AND U NEVER FAIL TO MAKE THINGS MORE FUN.
+
+<br><br>
+
+WE’LL NEVER FORGET THE:
+
+<br><br>
+
+“GUESS WHAT?”
+<br>
+“WHAT?”
+<br>
+“CHICKEN BUTT.”
+
+<br><br>
+
+THING BC FOR SOME REASON IT WAS ALWAYS SO STUPID
+BUT SO FUNNY 😭
+
+<br><br>
+
+WE’RE PRAYING THAT THIS YEAR BRINGS U NOTHING BUT
+HAPPINESS, JOY, SUCCESS, AND SO MANY BLESSINGS.
+
+<br><br>
+
+MAY ALLAH CONTINUE TO GUIDE U IN EVERYTHING U DO,
+GIVE U THE STRENGTH TO GET THROUGH THE HARD DAYS,
+AND HELP U ACHIEVE EVERY GOAL AND DREAM U HAVE.
+
+<br><br>
+
+STAY THE SAME HAIQA WE ALL KNOW AND LOVE.
+DON’T EVER LOSE THE PERSON U ARE.
+
+<br><br>
+
+HAPPY BIRTHDAY AGAIN!!
+ENJOY UR DAY, EAT A LOT, HAVE FUN,
+AND MAKE THE MOST OF IT.
+
+<br><br>
+
+WE LOVE U ALWAYS.
+
+<br><br>
+
+LOVE,
+<br>
+SAMMY & THIEN ❤️
 
 </p>
 
 
+<button onclick="showPhotos()">
+SEE YOUR MEMORIES 📸
+</button>
+
+
+</div>
+
+
+
+
+
+<!-- SCRAPBOOK -->
+
+<div id="photos" class="screen hidden">
+
+
 <h1>
-✨ 14 ✨
+📖 HAIQA'S SCRAPBOOK
 </h1>
 
 
+<div class="photo-book">
+
+
+<div class="photo-card">
+
+<img src="images/cuteselfie.jpeg">
+
+<p>
+The birthday girl ❤️
+</p>
+
+</div>
+
+
+
+<div class="photo-card">
+
+<img src="images/IMG_7859.jpeg">
+
+<p>
+A little memory ✨
+</p>
+
+</div>
+
+
+
+<div class="photo-card">
+
+<img src="images/IMG_8208.jpeg">
+
+<p>
+Haiconic moment 🌙
+</p>
+
+</div>
+
+
+
+<div class="photo-card">
+
+<img src="images/IMG_8341.jpeg">
+
+<p>
+Never stop smiling ❤️
+</p>
+
+</div>
+
+
+
+<div class="photo-card">
+
+<img src="images/IMG_8423.jpeg">
+
+<p>
+Stay amazing ✨
+</p>
+
+</div>
+
+
+</div>
+
+
+
+<button onclick="showFunny()">
+NEXT 😂
+</button>
+
+
 </div>
 
 
 
 
 
-<!-- FLOATING HEARTS -->
+<!-- FUNNY -->
 
-<div class="hearts">
+<div id="funny" class="screen hidden">
 
-❤️ ✨ ❤️ ✨ ❤️ ✨ ❤️
+
+<h1>
+😂 HAIQA MOMENTS
+</h1>
+
+
+<div class="photo-book">
+
+
+<div class="photo-card">
+
+<img src="images/funnyscreenshot.jpeg">
+
+<p>
+The funniest memories 😭
+</p>
 
 </div>
 
 
 
+<div class="photo-card">
 
+<img src="images/chicken1.jpeg">
 
-<style>
+<p>
+Guess what?
+</p>
 
+</div>
 
-.letter{
 
-font-size:18px;
-max-width:800px;
 
-}
+<div class="photo-card">
 
+<img src="images/chicken2.jpeg">
 
+<p>
+CHICKEN BUTT 💀
+</p>
 
-.photo-book{
+</div>
 
-display:flex;
 
-flex-wrap:wrap;
+</div>
 
-justify-content:center;
 
-gap:25px;
 
-max-height:60vh;
+<button onclick="showFinal()">
+ONE LAST THING ❤️
+</button>
 
-overflow-y:auto;
 
-padding:20px;
-
-}
-
-
-
-.photo-card{
-
-background:#111;
-
-padding:15px;
-
-border-radius:20px;
-
-border:2px solid #d4af37;
-
-box-shadow:0 0 20px rgba(212,175,55,.5);
-
-transform:rotate(-2deg);
-
-}
-
-
-
-.photo-card:nth-child(even){
-
-transform:rotate(3deg);
-
-}
-
-
-
-.photo-card img{
-
-width:220px;
-
-height:220px;
-
-object-fit:cover;
-
-border-radius:15px;
-
-}
-
-
-
-.hearts{
-
-position:fixed;
-
-bottom:20px;
-
-left:0;
-
-width:100%;
-
-text-align:center;
-
-font-size:30px;
-
-animation:float 4s infinite;
-
-}
-
-
-
-@keyframes float{
-
-0%{
-
-transform:translateY(0);
-
-opacity:.5;
-
-}
-
-
-50%{
-
-transform:translateY(-30px);
-
-opacity:1;
-
-}
-
-
-100%{
-
-transform:translateY(0);
-
-opacity:.5;
-
-}
-
-}
-
-
-</style>
-
-
-
-
-
-<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
-
-
-<script>
-
-
-function showBirthday(){
-
-
-document.getElementById("intro").classList.add("hidden");
-
-
-document.getElementById("birthday").classList.remove("hidden");
-
-
-
-confetti({
-
-particleCount:150,
-
-spread:100,
-
-origin:{y:0.6}
-
-});
-
-
-
-setTimeout(()=>{
-
-
-document.getElementById("birthday").classList.add("hidden");
-
-
-document.getElementById("warning").classList.remove("hidden");
-
-
-},4000);
-
-
-}
-
-
-
-
-function showLetter(){
-
-
-document.getElementById("warning").classList.add("hidden");
-
-
-document.getElementById("letter").classList.remove("hidden");
-
-
-}
-
-
-
-
-
-function showPhotos(){
-
-
-document.getElementById("letter").classList.add("hidden");
-
-
-document.getElementById("photos").classList.remove("hidden");
-
-
-}
-
-
-
-
-
-function showFunny(){
-
-
-document.getElementById("photos").classList.add("hidden");
-
-
-document.getElementById("funny").classList.remove("hidden");
-
-
-}
-
-
-
-
-
-function showFinal(){
-
-
-document.getElementById("funny").classList.add("hidden");
-
-
-document.getElementById("final").classList.remove("hidden");
-
-
-confetti({
-
-particleCount:100,
-
-spread:120
-
-});
-
-
-}
-
-
-
-</script>
-
-
-
+</div>
 </body>
-
 </html>
