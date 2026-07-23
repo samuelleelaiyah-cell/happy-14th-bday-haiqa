@@ -357,8 +357,7 @@ I ACCEPT THE RISK ❤️
 
 
 </div>
-
-  <!-- LETTER -->
+<!-- LETTER -->
 
 <div id="letter" class="screen hidden">
 
@@ -592,176 +591,39 @@ ONE LAST THING ❤️
 
 
 </div>
+<!-- FINAL MESSAGE -->
 
-  <!-- LETTER -->
-
-<div id="letter" class="screen hidden">
-
-
-<h1>
-💌 A LETTER FOR HAIQA
-</h1>
-
-
-<p class="letter">
-
-HAPPY BIRTHDAY HAIQAAAAAA!!!! 🎉
-
-<br><br>
-
-WE STILL CAN’T BELIEVE UR 14 NOW WHATTTTT 😭
-WE HOPE U HAVE THE BEST DAY EVER AND THAT U GET EVERYTHING
-YOU’VE BEEN WISHING FOR BC U ACTUALLY DESERVE IT.
-
-<br><br>
-
-THANK U FOR ALWAYS BEING SUCH A FUN PERSON TO BE AROUND.
-UR THE TYPE OF PERSON WHO CAN MAKE PEOPLE LAUGH WITHOUT
-EVEN TRYING, AND U NEVER FAIL TO MAKE THINGS MORE FUN.
-
-<br><br>
-
-WE’LL NEVER FORGET THE:
-
-<br><br>
-
-“GUESS WHAT?”
-<br>
-“WHAT?”
-<br>
-“CHICKEN BUTT.”
-
-<br><br>
-
-THING BC FOR SOME REASON IT WAS ALWAYS SO STUPID
-BUT SO FUNNY 😭
-
-<br><br>
-
-WE’RE PRAYING THAT THIS YEAR BRINGS U NOTHING BUT
-HAPPINESS, JOY, SUCCESS, AND SO MANY BLESSINGS.
-
-<br><br>
-
-MAY ALLAH CONTINUE TO GUIDE U IN EVERYTHING U DO,
-GIVE U THE STRENGTH TO GET THROUGH THE HARD DAYS,
-AND HELP U ACHIEVE EVERY GOAL AND DREAM U HAVE.
-
-<br><br>
-
-STAY THE SAME HAIQA WE ALL KNOW AND LOVE.
-DON’T EVER LOSE THE PERSON U ARE.
-
-<br><br>
-
-HAPPY BIRTHDAY AGAIN!!
-ENJOY UR DAY, EAT A LOT, HAVE FUN,
-AND MAKE THE MOST OF IT.
-
-<br><br>
-
-WE LOVE U ALWAYS.
-
-<br><br>
-
-LOVE,
-<br>
-SAMMY & THIEN ❤️
-
-</p>
-
-
-<button onclick="showPhotos()">
-SEE YOUR MEMORIES 📸
-</button>
-
-
-</div>
-
-
-
-
-
-<!-- SCRAPBOOK -->
-
-<div id="photos" class="screen hidden">
+<div id="final" class="screen hidden">
 
 
 <h1>
-📖 HAIQA'S SCRAPBOOK
+❤️ HAPPY BIRTHDAY HAIQA ❤️
 </h1>
 
 
-<div class="photo-book">
-
-
-<div class="photo-card">
-
-<img src="images/cuteselfie.jpeg">
-
 <p>
-The birthday girl ❤️
+
+Haiconic forever ✨
+
+<br><br>
+
+Keep being the funny, kind, and amazing person everyone loves.
+
+<br><br>
+
+We hope this year brings you happiness,
+success, and endless blessings.
+
+<br><br>
+
+Never forget how special you are.
+
+<br><br>
+
+✨ 14 ✨
+
 </p>
 
-</div>
-
-
-
-<div class="photo-card">
-
-<img src="images/IMG_7859.jpeg">
-
-<p>
-A little memory ✨
-</p>
-
-</div>
-
-
-
-<div class="photo-card">
-
-<img src="images/IMG_8208.jpeg">
-
-<p>
-Haiconic moment 🌙
-</p>
-
-</div>
-
-
-
-<div class="photo-card">
-
-<img src="images/IMG_8341.jpeg">
-
-<p>
-Never stop smiling ❤️
-</p>
-
-</div>
-
-
-
-<div class="photo-card">
-
-<img src="images/IMG_8423.jpeg">
-
-<p>
-Stay amazing ✨
-</p>
-
-</div>
-
-
-</div>
-
-
-
-<button onclick="showFunny()">
-NEXT 😂
-</button>
-
 
 </div>
 
@@ -769,63 +631,126 @@ NEXT 😂
 
 
 
-<!-- FUNNY -->
-
-<div id="funny" class="screen hidden">
-
-
-<h1>
-😂 HAIQA MOMENTS
-</h1>
-
-
-<div class="photo-book">
-
-
-<div class="photo-card">
-
-<img src="images/funnyscreenshot.jpeg">
-
-<p>
-The funniest memories 😭
-</p>
-
-</div>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
 
 
 
-<div class="photo-card">
-
-<img src="images/chicken1.jpeg">
-
-<p>
-Guess what?
-</p>
-
-</div>
+<script>
 
 
-
-<div class="photo-card">
-
-<img src="images/chicken2.jpeg">
-
-<p>
-CHICKEN BUTT 💀
-</p>
-
-</div>
+function showBirthday(){
 
 
-</div>
+document.getElementById("intro").classList.add("hidden");
+
+
+document.getElementById("birthday").classList.remove("hidden");
 
 
 
-<button onclick="showFinal()">
-ONE LAST THING ❤️
-</button>
+confetti({
+
+particleCount:150,
+
+spread:100,
+
+origin:{y:0.6}
+
+});
 
 
-</div>
+
+setTimeout(function(){
+
+
+document.getElementById("birthday").classList.add("hidden");
+
+
+document.getElementById("warning").classList.remove("hidden");
+
+
+},5000);
+
+
+
+}
+
+
+
+
+function showLetter(){
+
+
+document.getElementById("warning").classList.add("hidden");
+
+
+document.getElementById("letter").classList.remove("hidden");
+
+
+}
+
+
+
+
+
+function showPhotos(){
+
+
+document.getElementById("letter").classList.add("hidden");
+
+
+document.getElementById("photos").classList.remove("hidden");
+
+
+}
+
+
+
+
+
+function showFunny(){
+
+
+document.getElementById("photos").classList.add("hidden");
+
+
+document.getElementById("funny").classList.remove("hidden");
+
+
+}
+
+
+
+
+
+function showFinal(){
+
+
+document.getElementById("funny").classList.add("hidden");
+
+
+document.getElementById("final").classList.remove("hidden");
+
+
+
+confetti({
+
+particleCount:200,
+
+spread:120,
+
+origin:{y:0.5}
+
+});
+
+
+}
+
+
+</script>
+
+
+
 </body>
+
 </html>
