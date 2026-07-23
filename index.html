@@ -641,7 +641,11 @@ Never forget how special you are.
 
 
 function showBirthday(){
-document.getElementById("music").play();
+let music = document.getElementById("music");
+music.volume = 0.5;
+music.play().catch(error => {
+    console.log(error);
+});
 
 document.getElementById("intro").classList.add("hidden");
 
