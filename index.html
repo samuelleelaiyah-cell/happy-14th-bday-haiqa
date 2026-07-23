@@ -9,95 +9,180 @@
 <style>
 
 *{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:Georgia, serif;
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Georgia, serif;
 }
 
 body{
-  background:#090909;
-  color:white;
-  overflow:hidden;
+background:#090909;
+color:white;
+overflow:hidden;
 }
 
 
 .screen{
-  height:100vh;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  background:
-  radial-gradient(circle at center,#3b0000 0%,#090909 70%);
+height:100vh;
+width:100%;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+
+background:
+radial-gradient(circle at center,#5a0b16 0%,#090909 75%);
+
+padding:30px;
 }
 
 
 h1{
-  font-size:50px;
-  color:#d4af37;
-  text-shadow:0 0 20px rgba(212,175,55,0.7);
-  margin-bottom:15px;
-  opacity:0;
-  animation:fadeIn 1.5s forwards;
+font-size:50px;
+color:#d4af37;
+
+text-shadow:
+0 0 10px gold,
+0 0 25px rgba(212,175,55,.6);
+
+margin-bottom:20px;
+
 }
 
 
 p{
-  font-size:20px;
-  color:#ddd;
-  opacity:0;
-  animation:fadeIn 1.5s forwards;
-  animation-delay:.8s;
+font-size:20px;
+color:#eee;
+max-width:700px;
+line-height:1.6;
+
 }
 
 
 button{
 
-  margin-top:45px;
-  padding:18px 42px;
-  font-size:18px;
-  border:none;
-  border-radius:50px;
-  cursor:pointer;
+margin-top:35px;
 
-  background:#d4af37;
-  color:black;
+padding:18px 45px;
 
-  font-weight:bold;
+font-size:18px;
 
-  opacity:0;
-  animation:fadeIn 1.5s forwards;
-  animation-delay:1.6s;
+border:none;
+border-radius:50px;
 
-  transition:.3s;
+background:#d4af37;
+color:black;
+
+font-weight:bold;
+
+cursor:pointer;
+
+box-shadow:0 0 20px gold;
+
+transition:.3s;
 
 }
 
 
 button:hover{
 
-  transform:scale(1.08);
-  box-shadow:0 0 25px gold;
+transform:scale(1.08);
 
 }
 
 
 
-@keyframes fadeIn{
+.hidden{
+display:none;
+}
+
+
+
+/* INTRO */
+
+#intro h1{
+
+animation:fadeUp 1.5s;
+
+}
+
+
+#intro p{
+
+animation:fadeUp 2s;
+
+}
+
+
+#intro button{
+
+animation:fadeUp 2.5s;
+
+}
+
+
+
+/* BIRTHDAY */
+
+#birthday h1{
+
+animation:pop 1.5s;
+
+}
+
+
+
+/* WARNING */
+
+.warning{
+
+font-size:45px;
+
+}
+
+
+
+
+@keyframes fadeUp{
 
 from{
-  opacity:0;
-  transform:translateY(20px);
+
+opacity:0;
+transform:translateY(30px);
+
 }
 
 to{
-  opacity:1;
-  transform:translateY(0);
+
+opacity:1;
+transform:translateY(0);
+
 }
 
 }
+
+
+
+@keyframes pop{
+
+0%{
+
+transform:scale(.5);
+opacity:0;
+
+}
+
+100%{
+
+transform:scale(1);
+opacity:1;
+
+}
+
+}
+
+
 
 </style>
 
@@ -109,33 +194,469 @@ to{
 
 <div id="intro" class="screen">
 
-<h1>hey haiqa.</h1>
 
-<p>we made something for u.</p>
+<h1>hey haiqa. ❤️</h1>
 
-<button onclick="showBirthday()">CLICK HERE</button>
+<p>
+we made something special for you.
+</p>
+
+
+<button onclick="showBirthday()">
+CLICK HERE
+</button>
+
+
+</div>
+
+
+
+
+
+<div id="birthday" class="screen hidden">
+
+
+<h1>
+HAPPY 14TH
+</h1>
+
+
+<h1>
+BIRTHDAY
+</h1>
+
+
+<h1>
+HAIQA!!!!
+</h1>
+
+
+<p>
+this is only the beginning...
+</p>
+
 
 </div>
 
 
 
-<div id="birthday" class="screen" style="
-display:none;
-background:radial-gradient(circle,#5a0b16 0%,#090909 70%);
-">
 
 
-<h1>HAPPY 14TH</h1>
-
-<h1>BIRTHDAY</h1>
-
-<h1>HAIQA!!!!</h1>
+<div id="warning" class="screen hidden">
 
 
-<p>this is only the beginning...</p>
+<h1 class="warning">
+⚠️ WARNING
+</h1>
+
+
+<p>
+You are about to enter a dangerously cute birthday website.
+</p>
+
+
+<button onclick="showLetter()">
+I ACCEPT THE RISK ❤️
+</button>
 
 
 </div>
+<!-- LETTER SECTION -->
+
+<div id="letter" class="screen hidden">
+
+<h1>
+💌 A LETTER FOR HAIQA
+</h1>
+
+
+<p class="letter">
+
+HAPPY BIRTHDAY HAIQAAAAAA!!!! 🎉
+<br><br>
+
+WE STILL CAN’T BELIEVE UR 14 NOW WHATTTTT 😭
+WE HOPE U HAVE THE BEST DAY EVER AND THAT U GET EVERYTHING
+YOU’VE BEEN WISHING FOR BECAUSE YOU ACTUALLY DESERVE IT.
+<br><br>
+
+THANK YOU FOR ALWAYS BEING SUCH A FUN PERSON TO BE AROUND.
+YOU’RE THE TYPE OF PERSON WHO CAN MAKE PEOPLE LAUGH WITHOUT
+EVEN TRYING, AND YOU NEVER FAIL TO MAKE THINGS MORE FUN.
+<br><br>
+
+WE’LL NEVER FORGET THE
+“GUESS WHAT?”
+“WHAT?”
+“CHICKEN BUTT.”
+THING BECAUSE FOR SOME REASON IT WAS ALWAYS SO STUPID
+BUT SO FUNNY 😭
+<br><br>
+
+WE’RE PRAYING THAT THIS YEAR BRINGS YOU NOTHING BUT
+HAPPINESS, JOY, SUCCESS, AND SO MANY BLESSINGS.
+MAY ALLAH CONTINUE TO GUIDE YOU IN EVERYTHING YOU DO,
+GIVE YOU STRENGTH THROUGH HARD DAYS,
+AND HELP YOU ACHIEVE EVERY GOAL AND DREAM YOU HAVE.
+<br><br>
+
+STAY THE SAME HAIQA WE ALL KNOW AND LOVE.
+DON’T EVER LOSE THE PERSON YOU ARE.
+<br><br>
+
+HAPPY BIRTHDAY AGAIN!!
+ENJOY YOUR DAY, EAT A LOT, HAVE FUN,
+AND MAKE THE MOST OF IT.
+<br><br>
+
+WE LOVE YOU ALWAYS.
+<br><br>
+
+LOVE,
+<br>
+SAMMY & THIEN ❤️
+
+</p>
+
+
+<button onclick="showPhotos()">
+SEE YOUR MEMORIES 📸
+</button>
+
+
+</div>
+
+
+
+
+
+<!-- PHOTO SCRAPBOOK -->
+
+
+<div id="photos" class="screen hidden">
+
+
+<h1>
+📖 HAIQA'S SCRAPBOOK
+</h1>
+
+
+
+<div class="photo-book">
+
+
+<div class="photo-card">
+
+<img src="images/cuteselfie.jpeg">
+
+<p>
+The birthday girl ❤️
+</p>
+
+</div>
+
+
+
+
+<div class="photo-card">
+
+<img src="images/IMG_7859.jpeg">
+
+<p>
+A little moment ✨
+</p>
+
+</div>
+
+
+
+
+<div class="photo-card">
+
+<img src="images/IMG_8208.jpeg">
+
+<p>
+Another beautiful memory 🌙
+</p>
+
+</div>
+
+
+
+
+<div class="photo-card">
+
+<img src="images/IMG_8341.jpeg">
+
+<p>
+Forever iconic ✨
+</p>
+
+</div>
+
+
+
+
+<div class="photo-card">
+
+<img src="images/IMG_8423.jpeg">
+
+<p>
+Stay amazing ❤️
+</p>
+
+</div>
+
+
+</div>
+
+
+
+<button onclick="showFunny()">
+NEXT 😂
+</button>
+
+
+</div>
+
+
+
+
+
+<!-- FUNNY SECTION -->
+
+
+<div id="funny" class="screen hidden">
+
+
+<h1>
+😂 CERTIFIED HAIQA MOMENTS
+</h1>
+
+
+<div class="photo-book">
+
+
+<div class="photo-card">
+
+<img src="images/funnyscreenshot.jpeg">
+
+<p>
+Never beating the funny allegations 😭
+</p>
+
+</div>
+
+
+<div class="photo-card">
+
+<img src="images/chicken1.jpeg">
+
+<p>
+Guess what?
+</p>
+
+</div>
+
+
+
+<div class="photo-card">
+
+<img src="images/chicken2.jpeg">
+
+<p>
+Chicken butt. 💀
+</p>
+
+</div>
+
+
+</div>
+
+
+
+<button onclick="showFinal()">
+ONE LAST THING ❤️
+</button>
+
+
+</div>
+<!-- FINAL SCREEN -->
+
+<div id="final" class="screen hidden">
+
+<h1>
+❤️ HAPPY BIRTHDAY HAIQA ❤️
+</h1>
+
+
+<p>
+
+Haiconic forever ✨
+<br><br>
+
+Keep being the funny, kind, and amazing person everyone loves.
+
+<br><br>
+
+We hope this year gives you happiness,
+success, and endless blessings.
+
+<br><br>
+
+Never forget how special you are.
+
+</p>
+
+
+<h1>
+✨ 14 ✨
+</h1>
+
+
+</div>
+
+
+
+
+
+<!-- FLOATING HEARTS -->
+
+<div class="hearts">
+
+❤️ ✨ ❤️ ✨ ❤️ ✨ ❤️
+
+</div>
+
+
+
+
+
+<style>
+
+
+.letter{
+
+font-size:18px;
+max-width:800px;
+
+}
+
+
+
+.photo-book{
+
+display:flex;
+
+flex-wrap:wrap;
+
+justify-content:center;
+
+gap:25px;
+
+max-height:60vh;
+
+overflow-y:auto;
+
+padding:20px;
+
+}
+
+
+
+.photo-card{
+
+background:#111;
+
+padding:15px;
+
+border-radius:20px;
+
+border:2px solid #d4af37;
+
+box-shadow:0 0 20px rgba(212,175,55,.5);
+
+transform:rotate(-2deg);
+
+}
+
+
+
+.photo-card:nth-child(even){
+
+transform:rotate(3deg);
+
+}
+
+
+
+.photo-card img{
+
+width:220px;
+
+height:220px;
+
+object-fit:cover;
+
+border-radius:15px;
+
+}
+
+
+
+.hearts{
+
+position:fixed;
+
+bottom:20px;
+
+left:0;
+
+width:100%;
+
+text-align:center;
+
+font-size:30px;
+
+animation:float 4s infinite;
+
+}
+
+
+
+@keyframes float{
+
+0%{
+
+transform:translateY(0);
+
+opacity:.5;
+
+}
+
+
+50%{
+
+transform:translateY(-30px);
+
+opacity:1;
+
+}
+
+
+100%{
+
+transform:translateY(0);
+
+opacity:.5;
+
+}
+
+}
+
+
+</style>
+
 
 
 
@@ -145,27 +666,117 @@ background:radial-gradient(circle,#5a0b16 0%,#090909 70%);
 
 <script>
 
+
 function showBirthday(){
 
-document.getElementById("intro").style.display="none";
 
-document.getElementById("birthday").style.display="flex";
+document.getElementById("intro").classList.add("hidden");
+
+
+document.getElementById("birthday").classList.remove("hidden");
+
 
 
 confetti({
 
 particleCount:150,
-spread:90,
-startVelocity:45,
+
+spread:100,
+
 origin:{y:0.6}
+
+});
+
+
+
+setTimeout(()=>{
+
+
+document.getElementById("birthday").classList.add("hidden");
+
+
+document.getElementById("warning").classList.remove("hidden");
+
+
+},4000);
+
+
+}
+
+
+
+
+function showLetter(){
+
+
+document.getElementById("warning").classList.add("hidden");
+
+
+document.getElementById("letter").classList.remove("hidden");
+
+
+}
+
+
+
+
+
+function showPhotos(){
+
+
+document.getElementById("letter").classList.add("hidden");
+
+
+document.getElementById("photos").classList.remove("hidden");
+
+
+}
+
+
+
+
+
+function showFunny(){
+
+
+document.getElementById("photos").classList.add("hidden");
+
+
+document.getElementById("funny").classList.remove("hidden");
+
+
+}
+
+
+
+
+
+function showFinal(){
+
+
+document.getElementById("funny").classList.add("hidden");
+
+
+document.getElementById("final").classList.remove("hidden");
+
+
+confetti({
+
+particleCount:100,
+
+spread:120
 
 });
 
 
 }
 
+
+
 </script>
 
 
+
 </body>
+
 </html>
