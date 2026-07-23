@@ -1,26 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Happy Birthday Haiqa ❤️</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-      font-family: Georgia, serif;
-    }
+<title>Happy Birthday Haiqa ❤️</title>
 
-    body{
-      background:#090909;
-      color:#fff;
-      overflow:hidden;
-    }
+<style>
 
-  
-      .screen{
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Georgia, serif;
+}
+
+body{
+  background:#090909;
+  color:white;
+  overflow:hidden;
+}
+
+
+.screen{
   height:100vh;
   display:flex;
   flex-direction:column;
@@ -31,77 +33,97 @@
   radial-gradient(circle at center,#3b0000 0%,#090909 70%);
 }
 
-    
 
-
-    h1{
+h1{
   font-size:50px;
-  color:#d4af37 !important;
+  color:#d4af37;
+  text-shadow:0 0 20px rgba(212,175,55,0.7);
   margin-bottom:15px;
   opacity:0;
   animation:fadeIn 1.5s forwards;
 }
 
-    p{
-      font-size:20px;
-      color:#ddd;
-      opacity:0;
-      animation:fadeIn 1.5s forwards;
-      animation-delay:.8s;
-    }
 
-    button{
-      margin-top:45px;
-      padding:18px 42px;
-      font-size:18px;
-      border:none;
-      border-radius:50px;
-      cursor:pointer;
-      background:#d4af37;
-      color:black;
-      font-weight:bold;
-      opacity:0;
-      animation:fadeIn 1.5s forwards;
-      animation-delay:1.6s;
-      transition:.3s;
-    }
+p{
+  font-size:20px;
+  color:#ddd;
+  opacity:0;
+  animation:fadeIn 1.5s forwards;
+  animation-delay:.8s;
+}
 
-    button:hover{
-      transform:scale(1.08);
-      box-shadow:0 0 25px gold;
-    }
 
-    @keyframes fadeIn{
-      from{
-        opacity:0;
-        transform:translateY(20px);
-      }
-      to{
-        opacity:1;
-        transform:translateY(0);
-      }
-    }
-  </style>
+button{
+
+  margin-top:45px;
+  padding:18px 42px;
+  font-size:18px;
+  border:none;
+  border-radius:50px;
+  cursor:pointer;
+
+  background:#d4af37;
+  color:black;
+
+  font-weight:bold;
+
+  opacity:0;
+  animation:fadeIn 1.5s forwards;
+  animation-delay:1.6s;
+
+  transition:.3s;
+
+}
+
+
+button:hover{
+
+  transform:scale(1.08);
+  box-shadow:0 0 25px gold;
+
+}
+
+
+
+@keyframes fadeIn{
+
+from{
+  opacity:0;
+  transform:translateY(20px);
+}
+
+to{
+  opacity:1;
+  transform:translateY(0);
+}
+
+}
+
+</style>
+
 </head>
+
 
 <body>
 
+
 <div id="intro" class="screen">
-  <h1>hey haiqa.</h1>
 
-  <p>we made something for u.</p>
+<h1>hey haiqa.</h1>
 
-  <button onclick="showBirthday()">CLICK HERE</button>
+<p>we made something for u.</p>
+
+<button onclick="showBirthday()">CLICK HERE</button>
+
 </div>
-  <div id="birthday" class="screen" style="
+
+
+
+<div id="birthday" class="screen" style="
 display:none;
-height:100vh;
-justify-content:center;
-align-items:center;
-flex-direction:column;
-text-align:center;
-background:radial-gradient(circle,#5a0b16 0%, #090909 70%);
+background:radial-gradient(circle,#5a0b16 0%,#090909 70%);
 ">
+
 
 <h1>HAPPY 14TH</h1>
 
@@ -109,26 +131,41 @@ background:radial-gradient(circle,#5a0b16 0%, #090909 70%);
 
 <h1>HAIQA!!!!</h1>
 
+
 <p>this is only the beginning...</p>
 
+
 </div>
+
+
+
+
 <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
 
+
 <script>
+
 function showBirthday(){
 
-  document.getElementById("intro").style.display="none";
+document.getElementById("intro").style.display="none";
 
-  document.getElementById("birthday").style.display="flex";
+document.getElementById("birthday").style.display="flex";
 
-  confetti({
-    particleCount:150,
-    spread:90,
-    startVelocity:45,
-    origin:{ y:0.6 }
-  });
+
+confetti({
+
+particleCount:150,
+spread:90,
+startVelocity:45,
+origin:{y:0.6}
+
+});
+
 
 }
+
 </script>
+
+
 </body>
 </html>
